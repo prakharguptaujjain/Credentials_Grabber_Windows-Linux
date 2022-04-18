@@ -21,7 +21,7 @@ First click on **Code** then click on **Download ZIP** (As Shown in image)
 After Downloading extract the files
 
 Then copy the **setup.exe** file on your pendrive. And give it to the victim then the victim should somehow need to open **setup.exe** in his computer.
-When the victim returns back your pendrive then look for **.data file and copy the file to the same folder where **decrypter.exe** is present then run the **decrypter.exe**
+When the victim returns back your pendrive then look for **.data** file and copy the file to the same folder where **decrypter.exe** is present then run the **decrypter.exe**
 And a new text file named **Passwords.txt** will appear and open that.
 And baam!!! you can see the passwords.
 
