@@ -1,0 +1,16 @@
+subprocess.run
+os-sys
+jsonlib
+pybase64
+db-sqlite3
+pywin32
+cryptography
+pycryptodome
+pycryptodomex
+pycrypto
+pyinstaller
+pyinstaller-hooks-contrib
+pypiwin32
+pytest-shutil
+DateTime
+
