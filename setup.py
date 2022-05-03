@@ -4,14 +4,12 @@ import json
 from base64 import b64decode
 import base64
 import sqlite3
-from xml.dom.minidom import Document
 import win32crypt
 from Cryptodome.Cipher import AES
 from Crypto.PublicKey import RSA
 import shutil
 from datetime import datetime, timedelta
 import sys
-import rsa
 from cryptography.fernet import Fernet
 
 RESULT=""
