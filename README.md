@@ -13,7 +13,9 @@ The text inside this file is encrypted so if bymistakely the victim opens this f
 ![image](https://user-images.githubusercontent.com/95362168/163830918-ad041dd5-a604-457e-be7a-706db270f20e.png)
 
 First click on **Code** then click on **Download ZIP** (As Shown in image)
-
+Extract the zip file and open the folder
+Then open terminal and type **pip install -r .\requirements.txt**
+Then in terminal type **pyinstaller --onefile 
 
 After Downloading extract the files
 
